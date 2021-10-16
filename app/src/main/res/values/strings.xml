@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Weight Converter</string>
+    <string name="enter_weight_in_kg">Enter Weight in Kg</string>
+    <string name="convert_now">Convert Now</string>
+    <string name="default_weight">Pounds</string>
+    <string name="kilograms_kg">Kilograms</string>
+    <string name="hint_value">0.0</string>
 </resources>

@@ -1,18 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-</android.support.constraint.ConstraintLayout>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:id="@+id/enter_mass_in_kg_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="monospace"
+            android:text="@string/enter_weight_in_kg"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/enter_mass_in_kg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:textSize="28sp"
+            tools:text="0.0"
+            android:hint="@string/hint_value"
+            app:layout_constraintEnd_toEndOf="@+id/enter_mass_in_kg_tv"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/enter_mass_in_kg_tv"
+            app:layout_constraintTop_toBottomOf="@+id/mass_unit" />
+
+        <TextView
+            android:id="@+id/converted_weight_unit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="monospace"
+            android:text="@string/default_weight"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_mass_in_kg" />
+
+        <TextView
+            android:id="@+id/display_weight_converted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:hint="@string/hint_value"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="@+id/converted_weight_unit"
+            app:layout_constraintStart_toStartOf="@+id/converted_weight_unit"
+            app:layout_constraintTop_toBottomOf="@+id/converted_weight_unit" />
+
+        <Button
+            android:id="@+id/convert_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/convert_now"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/display_weight_converted" />
+
+        <TextView
+            android:id="@+id/mass_unit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="monospace"
+            android:text="@string/kilograms_kg"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/enter_mass_in_kg_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_mass_in_kg_tv" />
+
+        <ImageButton
+            android:id="@+id/exchange_button"
+            android:layout_width="72dp"
+            android:layout_height="59dp"
+            android:background="#FFFFFF"
+            android:tint="#000000"
+            app:layout_constraintBottom_toTopOf="@+id/converted_weight_unit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_mass_in_kg"
+            app:srcCompat="@drawable/swap_vertical" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
