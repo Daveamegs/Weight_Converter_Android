@@ -117,4 +117,78 @@ class MainActivity : AppCompatActivity() {
     private fun convertPoundsToKg(mass: Double, baseNum: Double = 2.205): Double {
         return mass / baseNum
     }
+
+    private fun convertKgToOunce(mass: Double, baseNum: Double = 35.274): Double{
+        return mass * baseNum
+    }
+
+    private fun convertOunceToKg(mass: Double, baseNum: Double = 35.274): Double{
+        return mass / baseNum
+    }
+
+    private fun convertKgToTonne(mass: Double, baseNum: Double = 1000.0): Double{
+        return mass / baseNum
+    }
+
+    private fun convertTonneToKg(mass: Double, baseNum: Double = 1000.0): Double{
+        return mass * baseNum
+    }
+
+    private fun convertKgToGrams(mass: Double, baseNum: Double = 1000.0): Double{
+        return mass * baseNum
+    }
+
+    private fun convertGramsToKg(mass: Double, baseNum: Double = 1000.0): Double{
+        return mass / baseNum
+    }
+
+    private fun convertPoundsToTonne(mass: Double, baseNum: Double = 2205.0): Double{
+        return mass / baseNum
+    }
+
+    private fun convertTonnesToPounds(mass: Double, baseNum: Double = 2205.0): Double{
+        return mass * baseNum
+    }
+
+    private fun convertPoundsToGrams(mass: Double, baseNum: Double = 453.592): Double{
+        return mass * baseNum
+    }
+
+    private fun convertGramsToPounds(mass: Double, baseNum: Double = 453.592): Double{
+        return mass / baseNum
+    }
+
+    private fun convertPoundsToOunce(mass: Double, baseNum: Double = 16.0): Double{
+        return mass * baseNum
+    }
+
+    private fun convertOunceToPounds(mass: Double, baseNum: Double = 16.0): Double{
+        return mass / baseNum
+    }
+
+    private fun convertTonnesToOunce(mass: Double, baseNum: Double = 35274.0): Double{
+        return mass * baseNum
+    }
+
+    private fun convertOunceToTonnes(mass: Double, baseNum: Double = 35274.0): Double{
+        return mass / baseNum
+    }
+
+    private fun convertTonnesToGrams(mass: Double, baseNum: Double = 35274.0): Double{
+        TODO("Grams baseNum yet to be implemented")
+        return mass * baseNum
+    }
+
+    private fun convertGramsToTonnes(mass: Double, baseNum: Double = 35274.0): Double{
+        TODO("Grams baseNum yet to be implemented")
+        return mass * baseNum
+    }
+
+    private fun convertOunceToGrams(mass: Double, baseNum: Double = 28.3495): Double{
+        return mass * baseNum
+    }
+
+    private fun convertGramsToOunce(mass: Double, baseNum: Double = 28.3495): Double{
+        return mass / baseNum
+    }
 }
