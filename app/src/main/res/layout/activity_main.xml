@@ -42,17 +42,13 @@
             app:layout_constraintEnd_toEndOf="@+id/enter_mass_in_kg_tv"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/enter_mass_in_kg_tv"
-            app:layout_constraintTop_toBottomOf="@+id/mass_unit" />
+            app:layout_constraintTop_toBottomOf="@+id/mass_unit_spinner" />
 
-        <TextView
-            android:id="@+id/converted_weight_unit"
+        <Spinner
+            android:id="@+id/converted_weight_unit_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:fontFamily="monospace"
-            android:text="@string/default_weight"
-            android:textColor="@color/black"
-            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_mass_in_kg" />
@@ -68,9 +64,9 @@
             android:minHeight="48dp"
             android:textColor="@color/black"
             android:textSize="28sp"
-            app:layout_constraintEnd_toEndOf="@+id/converted_weight_unit"
-            app:layout_constraintStart_toStartOf="@+id/converted_weight_unit"
-            app:layout_constraintTop_toBottomOf="@+id/converted_weight_unit" />
+            app:layout_constraintEnd_toEndOf="@+id/converted_weight_unit_spinner"
+            app:layout_constraintStart_toStartOf="@+id/converted_weight_unit_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/converted_weight_unit_spinner" />
 
         <Button
             android:id="@+id/convert_button"
@@ -83,15 +79,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/display_weight_converted" />
 
-        <TextView
-            android:id="@+id/mass_unit"
+        <Spinner
+            android:id="@+id/mass_unit_spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:fontFamily="monospace"
-            android:text="@string/kilograms_kg"
-            android:textColor="@color/black"
-            android:textSize="18sp"
+            android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="@+id/enter_mass_in_kg_tv"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_mass_in_kg_tv" />
@@ -102,7 +95,7 @@
             android:layout_height="59dp"
             android:background="#FFFFFF"
             android:tint="#000000"
-            app:layout_constraintBottom_toTopOf="@+id/converted_weight_unit"
+            app:layout_constraintBottom_toTopOf="@+id/converted_weight_unit_spinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enter_mass_in_kg"

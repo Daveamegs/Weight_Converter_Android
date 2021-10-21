@@ -5,4 +5,13 @@
     <string name="default_weight">Pounds</string>
     <string name="kilograms_kg">Kilograms</string>
     <string name="hint_value">0.0</string>
+
+    <string-array name="mass_units">
+        <item>Kilograms</item>
+        <item>Pounds</item>
+        <item>Grams</item>
+        <item>Tonnes</item>
+        <item>Milligrams</item>
+        <item>Ounce</item>
+    </string-array>
 </resources>
