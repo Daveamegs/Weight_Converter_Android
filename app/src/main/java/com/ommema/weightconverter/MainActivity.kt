@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.ommema.weightconverter.databinding.ActivityMainBinding
+import com.ommema.weightconverter.formulas.Formulas
 
 class MainActivity : AppCompatActivity() {
     //    Data Binding
@@ -85,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
 //            Conversion Values
             binding.enterMassInKg.setText(convertedMassValue.toString())
-            binding.displayWeightConverted.text = enterMassValue.toString()
+            binding.displayWeightConverted.setText(enterMassValue.toString())
         }
 
 //        Click Listener for conversion
@@ -93,102 +94,111 @@ class MainActivity : AppCompatActivity() {
 
             val enterMassInKg = binding.enterMassInKg.text.toString().toDouble()
             val inputMassUnit = binding.massUnitSpinner.selectedItem
+            val convertedWeightUnit = binding.convertedWeightUnitSpinner.selectedItem
 
 
 //            Convert from Kilograms to Pounds based on String Conditions
-            if (inputMassUnit.toString() == "Kilograms") {
-                convertedWeight = convertKgToPounds(enterMassInKg)
-                binding.displayWeightConverted.text = convertedWeight.toString()
+            if (inputMassUnit.toString() == "Kilograms" && convertedWeightUnit.toString() == "Pounds") {
+                convertedWeight = Formulas().convertKgToPounds(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
 
-//                Convert from pounds to kilograms based on the string condition
-            } else if (inputMassUnit.toString() == "Pounds") {
-                convertedWeight = convertPoundsToKg(enterMassInKg)
-                binding.displayWeightConverted.text = convertedWeight.toString()
             }
-
+//            Convert from pounds to kilograms based on the string condition
+            else if (inputMassUnit.toString() == "Pounds" && convertedWeightUnit.toString() == "Kilograms") {
+                convertedWeight = Formulas().convertPoundsToKg(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert Kilograms to Tonnes
+            else if (inputMassUnit.toString() == "Kilograms" && convertedWeightUnit.toString() == "Tonnes"){
+                convertedWeight = Formulas().convertKgToTonne(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Tonnes to Kilograms
+            else if (inputMassUnit.toString() == "Tonnes" && convertedWeightUnit.toString() == "Kilograms"){
+                convertedWeight = Formulas().convertTonneToKg(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Kilograms to Ounces
+            else if (inputMassUnit.toString() == "Kilograms" && convertedWeightUnit.toString() == "Ounce"){
+                convertedWeight = Formulas().convertKgToOunce(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Ounces to Kilograms
+            else if (inputMassUnit.toString() == "Ounce" && convertedWeightUnit.toString() == "Kilograms"){
+                convertedWeight = Formulas().convertOunceToKg(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Kilograms to Grams
+            else if (inputMassUnit.toString() == "Kilograms" && convertedWeightUnit.toString() == "Grams"){
+                convertedWeight = Formulas().convertKgToGrams(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Grams to Kilograms
+            else if (inputMassUnit.toString() == "Grams" && convertedWeightUnit.toString() == "Kilograms"){
+                convertedWeight = Formulas().convertGramsToKg(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Pounds to Tonnes
+            else if (inputMassUnit.toString() == "Pounds" && convertedWeightUnit.toString() == "Tonnes"){
+                convertedWeight = Formulas().convertPoundsToTonne(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Tonnes to Pounds
+            else if (inputMassUnit.toString() == "Tonnes" && convertedWeightUnit.toString() == "Pounds"){
+                convertedWeight = Formulas().convertTonnesToPounds(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Pounds to Ounce
+            else if (inputMassUnit.toString() == "Pounds" && convertedWeightUnit.toString() == "Ounce"){
+                convertedWeight = Formulas().convertPoundsToOunce(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Ounce to Pounds
+            else if (inputMassUnit.toString() == "Ounce" && convertedWeightUnit.toString() == "Pounds"){
+                convertedWeight = Formulas().convertOunceToPounds(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Pounds to Grams
+            else if (inputMassUnit.toString() == "Pounds" && convertedWeightUnit.toString() == "Grams"){
+                convertedWeight = Formulas().convertPoundsToGrams(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Grams to Pounds
+            else if (inputMassUnit.toString() == "Grams" && convertedWeightUnit.toString() == "Pounds"){
+                convertedWeight = Formulas().convertGramsToPounds(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Tonnes to Ounces
+            else if (inputMassUnit.toString() == "Tonnes" && convertedWeightUnit.toString() == "Ounce"){
+                convertedWeight = Formulas().convertTonnesToOunce(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            convert from Ounces to Tonnes
+            else if (inputMassUnit.toString() == "Ounce" && convertedWeightUnit.toString() == "Tonnes"){
+                convertedWeight = Formulas().convertOunceToTonnes(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Tonnes to Grams
+            else if (inputMassUnit.toString() == "Tonnes" && convertedWeightUnit.toString() == "Grams"){
+                convertedWeight = Formulas().convertTonnesToGrams(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Grams to Tonnes
+            else if (inputMassUnit.toString() == "Grams" && convertedWeightUnit.toString() == "Tonnes"){
+                convertedWeight = Formulas().convertGramsToTonnes(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Ounces to Grams
+            else if (inputMassUnit.toString() == "Ounce" && convertedWeightUnit.toString() == "Grams"){
+                convertedWeight = Formulas().convertOunceToGrams(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
+//            Convert from Grams to Ounce
+            else if (inputMassUnit.toString() == "Grams" && convertedWeightUnit.toString() == "Ounce"){
+                convertedWeight = Formulas().convertGramsToOunce(enterMassInKg)
+                binding.displayWeightConverted.setText(convertedWeight.toString())
+            }
         }
 
-    }
-
-    private fun convertKgToPounds(mass: Double, baseNum: Double = 2.205): Double {
-        return mass * baseNum
-    }
-
-    private fun convertPoundsToKg(mass: Double, baseNum: Double = 2.205): Double {
-        return mass / baseNum
-    }
-
-    private fun convertKgToOunce(mass: Double, baseNum: Double = 35.274): Double{
-        return mass * baseNum
-    }
-
-    private fun convertOunceToKg(mass: Double, baseNum: Double = 35.274): Double{
-        return mass / baseNum
-    }
-
-    private fun convertKgToTonne(mass: Double, baseNum: Double = 1000.0): Double{
-        return mass / baseNum
-    }
-
-    private fun convertTonneToKg(mass: Double, baseNum: Double = 1000.0): Double{
-        return mass * baseNum
-    }
-
-    private fun convertKgToGrams(mass: Double, baseNum: Double = 1000.0): Double{
-        return mass * baseNum
-    }
-
-    private fun convertGramsToKg(mass: Double, baseNum: Double = 1000.0): Double{
-        return mass / baseNum
-    }
-
-    private fun convertPoundsToTonne(mass: Double, baseNum: Double = 2205.0): Double{
-        return mass / baseNum
-    }
-
-    private fun convertTonnesToPounds(mass: Double, baseNum: Double = 2205.0): Double{
-        return mass * baseNum
-    }
-
-    private fun convertPoundsToGrams(mass: Double, baseNum: Double = 453.592): Double{
-        return mass * baseNum
-    }
-
-    private fun convertGramsToPounds(mass: Double, baseNum: Double = 453.592): Double{
-        return mass / baseNum
-    }
-
-    private fun convertPoundsToOunce(mass: Double, baseNum: Double = 16.0): Double{
-        return mass * baseNum
-    }
-
-    private fun convertOunceToPounds(mass: Double, baseNum: Double = 16.0): Double{
-        return mass / baseNum
-    }
-
-    private fun convertTonnesToOunce(mass: Double, baseNum: Double = 35274.0): Double{
-        return mass * baseNum
-    }
-
-    private fun convertOunceToTonnes(mass: Double, baseNum: Double = 35274.0): Double{
-        return mass / baseNum
-    }
-
-    private fun convertTonnesToGrams(mass: Double, baseNum: Double = 35274.0): Double{
-        TODO("Grams baseNum yet to be implemented")
-        return mass * baseNum
-    }
-
-    private fun convertGramsToTonnes(mass: Double, baseNum: Double = 35274.0): Double{
-        TODO("Grams baseNum yet to be implemented")
-        return mass * baseNum
-    }
-
-    private fun convertOunceToGrams(mass: Double, baseNum: Double = 28.3495): Double{
-        return mass * baseNum
-    }
-
-    private fun convertGramsToOunce(mass: Double, baseNum: Double = 28.3495): Double{
-        return mass / baseNum
     }
 }
